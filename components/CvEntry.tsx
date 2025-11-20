@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import Cadre from "./Cadre"
 
 type CvEntry = {
     title: string
@@ -8,12 +9,12 @@ type CvEntry = {
 
 export default function CvEntry(props: CvEntry) {
     return (
-        <div className="border-2 border-black dark:border-white dark:bg-zinc-800 rounded-3xl p-4">
+        <Cadre className="">
             <div className="flex flex-row justify-between">
                 <h3>{props.title}</h3>
                 <h4>{props.employer}</h4>
             </div>
             {props.children}
-        </div>
+        </Cadre>
     )
 }
