@@ -20,6 +20,7 @@ export default function Navbar() {
             <div className="flex flex-row">
                 <NavLinks href="/">Acceuil</NavLinks>
                 <NavLinks href="/CV">CV</NavLinks>
+                <NavLinks href="/Blog">Blog</NavLinks>
             </div>
         </nav>
     )
