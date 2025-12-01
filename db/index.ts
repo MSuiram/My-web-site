@@ -10,3 +10,10 @@ export const tasksTable = pgTable('tasks', {
     employer: text().notNull(),
     description: text().notNull(),
 })
+
+export const blogsTable = pgTable('blogs', {
+    id: uuid().defaultRandom().primaryKey(),
+    title: text().notNull(),
+    author: text().notNull(),
+    content: text().notNull(),
+})
