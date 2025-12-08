@@ -21,10 +21,20 @@ export async function createPost(form: FormData) {
         author: String(form.get('author')),
         content: String(form.get('content'))
     })
-    redirect((await headers()).get('referer') ?? '/')
+    redirect("/Blog")
 }
 
-export async function editPost(form: FormData) { }
+export async function editPost(form: FormData) {
+    await db
+        .update(blogsTable)
+        .set({
+            title: String(form.get('title')),
+            author: String(form.get('author')),
+            content: String(form.get('content'))
+        })
+        .where(eq(blogsTable.id, String(form.get('id'))))
+    redirect("/Blog/" + String(form.get('id')))
+}
 
 export async function deletePost(formData: FormData) {
     const id = formData.get("id") as string;

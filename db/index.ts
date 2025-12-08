@@ -17,3 +17,9 @@ export const blogsTable = pgTable('blogs', {
     author: text().notNull(),
     content: text().notNull(),
 })
+
+export const usersTable = pgTable('users', {
+    id: uuid().defaultRandom().primaryKey(),
+    login: text().notNull().unique(),
+    password: text().notNull(),
+})
