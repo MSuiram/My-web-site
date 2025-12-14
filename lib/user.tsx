@@ -23,7 +23,6 @@ export async function login(form: FormData) {
     const loggedIn = users.length > 0
         ? await compare(password, users[0].password)
         : false
-
     if (loggedIn) {
         const secret = process.env.SECRET!
         const signature = await hash(secret + login, 10)
@@ -43,7 +42,7 @@ export async function getCurrentUser() {
 
     // Check the signature
     const [login, signature] = session.value.split(';')
-    const correct = await compare(signature, secret + login)
+    const correct = await compare(secret + login, signature)
 
     return correct ? login : null
 }

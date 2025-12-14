@@ -1,3 +1,4 @@
+import { getCurrentUser } from "@/lib/user"
 import Link from "next/link"
 import { ReactNode } from "react"
 
@@ -14,7 +15,11 @@ function NavLinks(props: NavLinksProps) {
     )
 }
 
-export default function Navbar() {
+export default async function Navbar() {
+    const user = await getCurrentUser()
+    if (!user) {
+        return <p>You need to log in.</p>
+    }
     return (
         <nav className="bg-gradient-to-b from-blue-900 to-blue-950">
             <div className="flex flex-row">
