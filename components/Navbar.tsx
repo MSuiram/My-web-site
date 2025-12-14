@@ -18,7 +18,9 @@ function NavLinks(props: NavLinksProps) {
 export default async function Navbar() {
     const user = await getCurrentUser()
     if (!user) {
-        return <p>You need to log in.</p>
+        return (
+            <NavLinks href="/">You need to log in.</NavLinks>
+        )
     }
     return (
         <nav className="bg-gradient-to-b from-blue-900 to-blue-950">
