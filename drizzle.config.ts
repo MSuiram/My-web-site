@@ -5,6 +5,6 @@ export default defineConfig({
     schema: "./db/schema.ts",
     out: "./drizzle",
     dbCredentials: {
-        url: process.env.DATABASE_URL!,
+        url: "postgresql://postgres:AZERTY1234@localhost:5432/dbtest",
     },
 });
