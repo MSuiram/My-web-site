@@ -1,7 +1,7 @@
 'use server'
 
 import { db } from '@/db'
-import { tasksTable } from '@/db/index'
+import { tasksTable } from '@/db/schema'
 import { UUID } from 'crypto'
 import { eq } from 'drizzle-orm'
 import { headers } from "next/headers"

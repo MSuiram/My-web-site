@@ -1,6 +1,7 @@
 'use server'
 
-import { db, usersTable } from '@/db'
+import { db } from '@/db'
+import { usersTable } from '@/db/schema'
 import { compare, hash } from 'bcryptjs'
 import { eq } from "drizzle-orm"
 import { cookies, headers } from 'next/headers'

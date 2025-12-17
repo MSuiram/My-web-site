@@ -2,7 +2,7 @@
 
 import { db } from "@/db"
 import { eq } from "drizzle-orm"
-import { blogsTable } from '@/db/index'
+import { blogsTable } from '@/db/schema'
 import { headers } from "next/headers"
 import { redirect } from "next/navigation"
 
